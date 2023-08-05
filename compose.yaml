@@ -1,0 +1,17 @@
+# THIS DOCKERFILE IS INTENDED FOR DEVELOPMENT ENVIRONMENTS
+# DO NOT USE THIS FOR PRODUCTION USAGES.
+
+version: '3.9'
+
+services:
+  mongodb:
+    container_name: mongodb_bench
+    image: mongo:6.0.1
+    ports:
+      - '27017:27017'
+    volumes:
+      -  mongodb:/data/db
+    restart: always
+
+volumes:
+  mongodb:
